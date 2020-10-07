@@ -12,7 +12,6 @@
         require_once 'retrieve_message_leftbar.php';
         require_once 'retrieve_message.php';
         echo "test2";
-        include_once("index.html"); 
         //TO_BE_UPDATED
         $user_id = $_GET["user_id"];
         $user_type = $_GET["user_type"];
