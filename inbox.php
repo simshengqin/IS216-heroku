@@ -7,13 +7,10 @@
 <html>
 <head>
     <?php
-        echo "test2";
         require_once 'include/common.php';
         require_once 'include/protect.php';
         require_once 'retrieve_message_leftbar.php';
-        echo "OOO";
-        require_once 'retrieve_message.php';
-        echo "whyy";
+        require_once 'retrieve_message.php';;
         //TO_BE_UPDATED
         $user_id = $_GET["user_id"];
         $user_type = $_GET["user_type"];
@@ -228,11 +225,11 @@
     };
 
     window.setInterval(function(){
-        //Update the right side bar messages ever 1 second
+        //Update the right side bar messages ever 10 second
         update_selected_messages();
-         //Update the left side bar messages ever 1 second
+         //Update the left side bar messages ever 10 second
         update_selected_messages_leftbar();
-    }, 1000);
+    }, 10000);
 
     function update_selected_messages_leftbar() {
         //Update the left sidebar messages
