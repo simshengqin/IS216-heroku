@@ -223,14 +223,14 @@
         update_selected_messages();
 
     };
-
+    /*
     window.setInterval(function(){
         //Update the right side bar messages ever 10 second
         update_selected_messages();
          //Update the left side bar messages ever 10 second
         update_selected_messages_leftbar();
     }, 10000);
-
+    */
     function update_selected_messages_leftbar() {
         //Update the left sidebar messages
 
