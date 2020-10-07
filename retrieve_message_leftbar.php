@@ -1,11 +1,12 @@
 <html>
 <head>
+hi
 </head>
 <body>
 <?php
 require_once "include\common.php";
 
-echo "HII";
+echo "HIIl";
 if(isset($_POST['user_id']) && isset($_POST['user_type'])){
     $user_id = $_POST['user_id'];
     $user_type = $_POST['user_type'];
