@@ -369,15 +369,16 @@
                 }            
             }  
         };  
-        request.open('POST', 'retrieve_message_leftbar.php', true);
-        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
+        request.open('GET', 'retrieve_message_leftbar.php?user_id='+user_id+'&user_type='+user_type, true);
+        //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
         //Get the user_id and user_type from the current url
         var params_arr = parseURLParams(window.location.href);
         var user_id = params_arr["user_id"];
         var user_type = params_arr["user_type"];
         var selected_from_id = sessionStorage.getItem("selected_from_id");
         var selected_from_type = sessionStorage.getItem("selected_from_type");
-        request.send("user_id="+user_id+"&user_type="+user_type);
+        request.send();
+        //request.send("user_id="+user_id+"&user_type="+user_type);
         //alert(user_id);
 
     }

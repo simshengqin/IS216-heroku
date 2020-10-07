@@ -6,9 +6,9 @@
 require_once "include\common.php";
 
 echo "HII";
-if(isset($_POST['user_id']) && isset($_POST['user_type'])){
-    $user_id = $_POST['user_id'];
-    $user_type = $_POST['user_type'];
+if(isset($_GET['user_id']) && isset($_GET['user_type'])){
+    $user_id = $_GET['user_id'];
+    $user_type = $_GET['user_type'];
     //update the leftsidebar messages
     $messageDAO = new messageDAO();
     //userDAO and companyDAO are for retrieving the user nane and company name
