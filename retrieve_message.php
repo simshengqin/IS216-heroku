@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['from_id']) && isset($_GET['from_type']) && isset($_GET['to_id']) && isset($_GET['to_type'])){
-    require_once "include\common.php";
+    require_once "include/common.php";
     $from_id = $_GET['from_id'];
     $from_type = $_GET['from_type'];
     $to_id = $_GET['to_id'];

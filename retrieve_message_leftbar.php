@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET['user_id']) && isset($_GET['user_type'])){
-    require_once "include\common.php";
+    require_once "include/common.php";
     $user_id = $_GET['user_id'];
     $user_type = $_GET['user_type'];
     //update the leftsidebar messages
