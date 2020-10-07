@@ -9,7 +9,7 @@
     <?php
         require_once 'include/common.php';
         require_once 'include/protect.php';
-        require_once 'retrieve_message_leftbar.php';
+        require_once 'retrieve_message_leftbar2.php';
         require_once 'retrieve_message.php';;
         //TO_BE_UPDATED
         $user_id = $_GET["user_id"];
@@ -369,7 +369,7 @@
                 }            
             }  
         };  
-        request.open('POST', 'retrieve_message_leftbar.php', true);
+        request.open('POST', 'retrieve_message_leftbar2.php', true);
         request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
         //Get the user_id and user_type from the current url
         var params_arr = parseURLParams(window.location.href);
