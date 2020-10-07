@@ -9,6 +9,7 @@
     <?php
         require_once 'include/common.php';
         require_once 'include/protect.php';
+        echo "testtt";
         include_once("index.html"); 
         //TO_BE_UPDATED
         $user_id = $_GET["user_id"];
