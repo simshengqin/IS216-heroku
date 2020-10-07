@@ -528,7 +528,7 @@
                     //Update the messages displayed to show the sent message
                     //Update the right side chat bar
                     update_selected_messages();
-                    update_selected_messages_leftbar();
+                    //update_selected_messages_leftbar();
                 }  
             };  
             //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
