@@ -4,7 +4,7 @@ hiooo
 </head>
 <body>
 <?php
-require_once "include\common.php";
+//require_once "include\common.php";
 
 echo "HIIl";
 if(isset($_POST['user_id']) && isset($_POST['user_type'])){
