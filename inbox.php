@@ -435,8 +435,8 @@
                 }            
             }  
         };  
-        request.open('POST', 'retrieve_message.php', true);
-        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
+        request.open('GET', "retrieve_message.php?from_id="+selected_from_id+"&from_type="+selected_from_type+"&to_id="+user_id+"&to_type="+user_type, true);
+        //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
         //Get the user_id and user_type from the current url
         var params_arr = parseURLParams(window.location.href);
         var user_id = params_arr["user_id"];
@@ -453,7 +453,8 @@
             selected_from_type = params_arr["target_type"];
         }
         if (selected_from_id != "" && selected_from_type != "") {
-            request.send("from_id="+selected_from_id+"&from_type="+selected_from_type+"&to_id="+user_id+"&to_type="+user_type);
+            request.send();
+            //request.send("from_id="+selected_from_id+"&from_type="+selected_from_type+"&to_id="+user_id+"&to_type="+user_type);
         }
         
     }
@@ -530,8 +531,8 @@
                     update_selected_messages_leftbar();
                 }  
             };  
-            request.open('POST', 'send_message.php', true);
-            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
+            request.open('get',"send_message.php?"+"body=" +body+ "&date="+sent_datetime+ "&from_id="+user_id+ "&from_type="+user_type+ "&seen="+"false"+ "&time="+""+ "&to_id="+selected_from_id+ "&to_type="+selected_from_type+ "&type="+ "", true);
+            //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
             //$body, $date, $from_id, $from_type, $seen, $time, $to_id, $to_type, $type
             //Get today date and time in sql format yyyy-mm-dd hh:mm:ss
             var d = new Date();
@@ -548,7 +549,8 @@
             var user_type = params_arr["user_type"];        
             selected_from_id = sessionStorage.getItem("selected_from_id");
             selected_from_type = sessionStorage.getItem("selected_from_type");
-            request.send("body=" +body+ "&date="+sent_datetime+ "&from_id="+user_id+ "&from_type="+user_type+ "&seen="+"false"+ "&time="+""+ "&to_id="+selected_from_id+ "&to_type="+selected_from_type+ "&type="+ "");              
+            request.send();
+            //request.send("body=" +body+ "&date="+sent_datetime+ "&from_id="+user_id+ "&from_type="+user_type+ "&seen="+"false"+ "&time="+""+ "&to_id="+selected_from_id+ "&to_type="+selected_from_type+ "&type="+ "");              
         }
         //Empty the input box
         document.getElementById("sent_message").value = "";
