@@ -1,13 +1,6 @@
-<html>
-<head>
-hiooo
-</head>
-<body>
 <?php
-//require_once "include\common.php";
-
-echo "HIIl";
 if(isset($_POST['user_id']) && isset($_POST['user_type'])){
+    require_once 'include/common.php';
     $user_id = $_POST['user_id'];
     $user_type = $_POST['user_type'];
     //update the leftsidebar messages
@@ -65,5 +58,3 @@ if(isset($_POST['user_id']) && isset($_POST['user_type'])){
 }
 
 ?>
-</body>
-</html>

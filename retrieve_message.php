@@ -1,9 +1,6 @@
-<head>
-hi11
-</head>
 <?php
-//require_once "include\common.php";
 if(isset($_POST['from_id']) && isset($_POST['from_type']) && isset($_POST['to_id']) && isset($_POST['to_type'])){
+    require_once 'include/common.php';
     $from_id = $_POST['from_id'];
     $from_type = $_POST['from_type'];
     $to_id = $_POST['to_id'];
