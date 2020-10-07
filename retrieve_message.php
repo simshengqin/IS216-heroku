@@ -1,6 +1,7 @@
 <?php
-require_once "include\common.php";
+
 if(isset($_GET['from_id']) && isset($_GET['from_type']) && isset($_GET['to_id']) && isset($_GET['to_type'])){
+    require_once "include\common.php";
     $from_id = $_GET['from_id'];
     $from_type = $_GET['from_type'];
     $to_id = $_GET['to_id'];
@@ -32,7 +33,5 @@ if(isset($_GET['from_id']) && isset($_GET['from_type']) && isset($_GET['to_id'])
         array_push($messages_output, $individual_message);
     }
     echo json_encode($messages_output);
-
 }
-
 ?>

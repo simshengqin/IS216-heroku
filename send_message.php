@@ -1,6 +1,6 @@
 <?php
-require_once "include\common.php";
 if(isset($_GET['body']) && isset($_GET['date']) && isset($_GET['from_id']) && isset($_GET['from_type']) && isset($_GET['seen']) && isset($_GET['time']) && isset($_GET['to_id']) && isset($_GET['to_type']) && isset($_GET['type'])){
+    require_once "include\common.php";
     $body = $_GET['body'];
     $date = $_GET['date'];
     $from_id = $_GET['from_id'];
@@ -21,5 +21,4 @@ if(isset($_GET['body']) && isset($_GET['date']) && isset($_GET['from_id']) && is
     //echo json_encode($messages_output);
 
 }
-
 ?>

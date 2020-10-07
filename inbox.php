@@ -9,8 +9,6 @@
     <?php
         require_once 'include/common.php';
         require_once 'include/protect.php';
-        echo "testtt";
-        include_once("index.html"); 
         //TO_BE_UPDATED
         $user_id = $_GET["user_id"];
         $user_type = $_GET["user_type"];
@@ -225,11 +223,11 @@
     };
 
     window.setInterval(function(){
-        //Update the right side bar messages ever 1 second
+        //Update the right side bar messages ever 60 second
         update_selected_messages();
-         //Update the left side bar messages ever 1 second
+         //Update the left side bar messages ever 60 second
         update_selected_messages_leftbar();
-    }, 1000);
+    }, 60000);
 
     function update_selected_messages_leftbar() {
         //Update the left sidebar messages
@@ -369,7 +367,7 @@
                 }            
             }  
         };  
-        request.open('GET', 'retrieve_message_leftbar.php?user_id='+user_id+'&user_type='+user_type, true);
+        
         //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
         //Get the user_id and user_type from the current url
         var params_arr = parseURLParams(window.location.href);
@@ -377,6 +375,7 @@
         var user_type = params_arr["user_type"];
         var selected_from_id = sessionStorage.getItem("selected_from_id");
         var selected_from_type = sessionStorage.getItem("selected_from_type");
+        request.open('GET', 'retrieve_message_leftbar.php?user_id='+user_id+'&user_type='+user_type, true);
         request.send();
         //request.send("user_id="+user_id+"&user_type="+user_type);
         //alert(user_id);
@@ -435,7 +434,7 @@
                 }            
             }  
         };  
-        request.open('GET', "retrieve_message.php?from_id="+selected_from_id+"&from_type="+selected_from_type+"&to_id="+user_id+"&to_type="+user_type, true);
+        
         //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
         //Get the user_id and user_type from the current url
         var params_arr = parseURLParams(window.location.href);
@@ -452,6 +451,7 @@
             selected_from_id = params_arr["target_id"];
             selected_from_type = params_arr["target_type"];
         }
+        request.open('GET', "retrieve_message.php?from_id="+selected_from_id+"&from_type="+selected_from_type+"&to_id="+user_id+"&to_type="+user_type, true);
         if (selected_from_id != "" && selected_from_type != "") {
             request.send();
             //request.send("from_id="+selected_from_id+"&from_type="+selected_from_type+"&to_id="+user_id+"&to_type="+user_type);
@@ -531,7 +531,6 @@
                     update_selected_messages_leftbar();
                 }  
             };  
-            request.open('get',"send_message.php?"+"body=" +body+ "&date="+sent_datetime+ "&from_id="+user_id+ "&from_type="+user_type+ "&seen="+"false"+ "&time="+""+ "&to_id="+selected_from_id+ "&to_type="+selected_from_type+ "&type="+ "", true);
             //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
             //$body, $date, $from_id, $from_type, $seen, $time, $to_id, $to_type, $type
             //Get today date and time in sql format yyyy-mm-dd hh:mm:ss
@@ -549,6 +548,7 @@
             var user_type = params_arr["user_type"];        
             selected_from_id = sessionStorage.getItem("selected_from_id");
             selected_from_type = sessionStorage.getItem("selected_from_type");
+            request.open('get',"send_message.php?"+"body=" +body+ "&date="+sent_datetime+ "&from_id="+user_id+ "&from_type="+user_type+ "&seen="+"false"+ "&time="+""+ "&to_id="+selected_from_id+ "&to_type="+selected_from_type+ "&type="+ "", true);
             request.send();
             //request.send("body=" +body+ "&date="+sent_datetime+ "&from_id="+user_id+ "&from_type="+user_type+ "&seen="+"false"+ "&time="+""+ "&to_id="+selected_from_id+ "&to_type="+selected_from_type+ "&type="+ "");              
         }

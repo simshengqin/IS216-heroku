@@ -1,12 +1,6 @@
-<html>
-<head>
-</head>
-<body>
 <?php
-require_once "include\common.php";
-
-echo "HII";
 if(isset($_GET['user_id']) && isset($_GET['user_type'])){
+    require_once "include\common.php";
     $user_id = $_GET['user_id'];
     $user_type = $_GET['user_type'];
     //update the leftsidebar messages
@@ -64,5 +58,3 @@ if(isset($_GET['user_id']) && isset($_GET['user_type'])){
 }
 
 ?>
-</body>
-</html>
