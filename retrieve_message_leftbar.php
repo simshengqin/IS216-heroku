@@ -1,5 +1,10 @@
+<html>
+<head>
+</head>
+<body>
 <?php
 require_once "include\common.php";
+
 echo "HII";
 if(isset($_POST['user_id']) && isset($_POST['user_type'])){
     $user_id = $_POST['user_id'];
@@ -59,3 +64,5 @@ if(isset($_POST['user_id']) && isset($_POST['user_type'])){
 }
 
 ?>
+</body>
+</html>
