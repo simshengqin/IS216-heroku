@@ -1,13 +1,14 @@
 <?php
-if(isset($_POST['from_id']) && isset($_POST['from_type']) && isset($_POST['to_id']) && isset($_POST['to_type'])){
-    require_once 'include/common.php';
-    $from_id = $_POST['from_id'];
-    $from_type = $_POST['from_type'];
-    $to_id = $_POST['to_id'];
-    $to_type = $_POST['to_type'];
+
+if(isset($_GET['from_id']) && isset($_GET['from_type']) && isset($_GET['to_id']) && isset($_GET['to_type'])){
+    require_once "include/common.php";
+    $from_id = $_GET['from_id'];
+    $from_type = $_GET['from_type'];
+    $to_id = $_GET['to_id'];
+    $to_type = $_GET['to_type'];
     //companyDAO is for retrieving the and company image
-    $userDAO = new userDAO();
-    $companyDAO = new companyDAO();
+    //$userDAO = new userDAO();
+    //$companyDAO = new companyDAO();
     $messageDAO = new messageDAO();
     //userDAO and companyDAO are for retrieving the user picture and company picture
     //$userDAO = new userDAO();
@@ -32,7 +33,5 @@ if(isset($_POST['from_id']) && isset($_POST['from_type']) && isset($_POST['to_id
         array_push($messages_output, $individual_message);
     }
     echo json_encode($messages_output);
-
 }
-
 ?>
